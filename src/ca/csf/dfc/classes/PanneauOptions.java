@@ -30,8 +30,8 @@ public class PanneauOptions<E> extends JPanel{
 		super();
         this.add(lbl_FormeJLabel);
         this.add(combo_Forme);
-        btn_ChoixCouleurChooser.setChooserPanels(colorChoosers);
-        this.add(btn_ChoixCouleurChooser);
+        //btn_ChoixCouleurChooser.setChooserPanels(colorChoosers);
+        this.add(btn_Couleur);
         
         this.add(btn_Trait);
 		
