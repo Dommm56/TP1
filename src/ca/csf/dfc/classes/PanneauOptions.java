@@ -1,40 +1,38 @@
 package ca.csf.dfc.classes;
 
-
-import java.awt.Color;
-
 import javax.swing.JButton;
 import javax.swing.JColorChooser;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import org.w3c.dom.css.RGBColor;
-
-import sun.awt.image.PixelConverter.Rgba;
-
 public class PanneauOptions<E> extends JPanel{
 
 	private static final long serialVersionUID = -6133798062695262877L;
 	private String[] lesFormesStrings = {"Ligne","Ellipse","Rectangle"};
 	
+	
+	JComboBox combo_Forme = new JComboBox(Formes.values());
+	JComboBox combo_Couleur = new JComboBox(Couleurs.values());
+	JComboBox combo_Trait = new JComboBox(Traits.values());
+	
 	JLabel lbl_FormeJLabel = new JLabel("Formes");
-	JComboBox<String> combo_Forme = new JComboBox<String>(lesFormesStrings);
-	
-	JButton btn_Couleur = new JButton("Couleur");
-	JColorChooser btn_ChoixCouleurChooser = new JColorChooser();
+	JLabel lbl_Couleur = new JLabel("Couleur");
+	JLabel lbl_Trait = new JLabel("Trait");
 	
 	
-	JButton btn_Trait = new JButton("Trait");
+	
+	
 	public PanneauOptions() {
 		super();
         this.add(lbl_FormeJLabel);
         this.add(combo_Forme);
-        btn_ChoixCouleurChooser.setChooserPanels(colorChoosers);
-        this.add(btn_ChoixCouleurChooser);
+
+        this.add(lbl_Couleur);
+        this.add(combo_Couleur);
         
-        this.add(btn_Trait);
-		
+        this.add(lbl_Trait);
+        this.add(combo_Trait);
 		
 		
 	}//fin Panneau1
