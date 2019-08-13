@@ -1,16 +1,11 @@
 package ca.csf.dfc.classes;
-
-import javax.swing.JButton;
-import javax.swing.JColorChooser;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class PanneauOptions<E> extends JPanel{
-
 	private static final long serialVersionUID = -6133798062695262877L;
 	private String[] lesFormesStrings = {"Ligne","Ellipse","Rectangle"};
-	
 	
 	JComboBox combo_Forme = new JComboBox(Formes.values());
 	JComboBox combo_Couleur = new JComboBox(Couleurs.values());
@@ -19,10 +14,7 @@ public class PanneauOptions<E> extends JPanel{
 	JLabel lbl_FormeJLabel = new JLabel("Formes");
 	JLabel lbl_Couleur = new JLabel("Couleur");
 	JLabel lbl_Trait = new JLabel("Trait");
-	
-	
-	
-	
+
 	public PanneauOptions() {
 		super();
         this.add(lbl_FormeJLabel);
@@ -33,13 +25,6 @@ public class PanneauOptions<E> extends JPanel{
         
         this.add(lbl_Trait);
         this.add(combo_Trait);
-		
-		
-	}//fin Panneau1
-	
-	
-
-	
-	
-	
+			
+	}//fin Panneau1	
 }//fin JPanel

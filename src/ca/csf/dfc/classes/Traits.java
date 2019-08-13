@@ -1,7 +1,9 @@
 package ca.csf.dfc.classes;
 
 public enum Traits {
-	
+	UN(1),
+	DEUX(2),
+	QUATRE(4),
 	SIX(6),
 	HUIT(8),
 	DIX(10),

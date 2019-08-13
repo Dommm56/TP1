@@ -4,6 +4,4 @@ public enum Formes {
 	Rectangle,
 	Ellipse,
 	Ligne;
-	
-	
 }//
