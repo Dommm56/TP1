@@ -1,46 +1,23 @@
 package ca.csf.dfc.classes;
 
 import java.awt.Color;
-import java.awt.Shape;
+import java.awt.geom.RectangularShape;
 
 public class Element implements IElement {
 	
-	private Shape m_typeElement;
+	private RectangularShape m_typeElement;
 	private Color m_couleur;
-	private double m_posXOrigine;
-	private double m_posYOrigine;
-	private double m_posXFin;
-	private double m_posYFin;
 	private float m_trait;
 	private Color m_remplissage;
+	
+	@Override
+	public void defTypeElement(RectangularShape p_shape) {
+		this.m_typeElement = p_shape;
+	}
 
 	@Override
 	public void defCouleur(Color p_couleur) {
 		this.m_couleur = p_couleur;
-
-	}
-
-	@Override
-	public void defPosXOrigine(double p_posX) {
-		this.m_posXOrigine = p_posX;
-
-	}
-
-	@Override
-	public void defPosYOrigine(double p_posY) {
-		this.m_posYOrigine = p_posY;
-
-	}
-
-	@Override
-	public void defPosXFin(double p_posX) {
-		this.m_posXFin = p_posX;
-
-	}
-
-	@Override
-	public void defPosYFin(double p_posY) {
-		this.m_posYFin = p_posY;
 
 	}
 
@@ -55,11 +32,29 @@ public class Element implements IElement {
 		this.m_remplissage = p_remplissage;
 
 	}
+	
+	@Override
+	public RectangularShape getTypeElement() {
+		return this.m_typeElement;
+	}
+	
 
 	@Override
-	public void defType(Shape p_typeElement) {
-		this.m_typeElement = p_typeElement;
+	public Color getCouleur() {
 		
+		return this.m_couleur;
+	}
+
+	@Override
+	public float getTrait() {
+		
+		return this.m_trait;
+	}
+
+	@Override
+	public Color getRemplissage() {
+		
+		return this.m_remplissage;
 	}
 
 }
