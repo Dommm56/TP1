@@ -1,17 +1,17 @@
 package ca.csf.dfc.classes;
 
 import java.awt.Color;
-import java.awt.geom.RectangularShape;
+import java.awt.Shape;
 
 public class Element implements IElement {
 	
-	private RectangularShape m_typeElement;
+	private Shape m_typeElement;
 	private Color m_couleur;
 	private float m_trait;
 	private Color m_remplissage;
 	
 	@Override
-	public void defTypeElement(RectangularShape p_shape) {
+	public void defTypeElement(Shape p_shape) {
 		this.m_typeElement = p_shape;
 	}
 
@@ -34,7 +34,7 @@ public class Element implements IElement {
 	}
 	
 	@Override
-	public RectangularShape getTypeElement() {
+	public Shape getTypeElement() {
 		return this.m_typeElement;
 	}
 	
