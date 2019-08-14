@@ -11,5 +11,7 @@ public class PanneauDessin extends JPanel{
 		super();  
         this.add(lbl_Trait);	
 	}//fin Panneau1	
+	
+	
 }//fin JPanel
 

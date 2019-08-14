@@ -6,6 +6,10 @@ public class CreateurElement {
 	
 	private IElementBuilder m_elementBuilder;
 	
+	public CreateurElement() {
+		this.m_elementBuilder = null;
+	}
+	
 	public CreateurElement(IElementBuilder p_elementBuilder) {
 		this.m_elementBuilder = p_elementBuilder;
 	}
