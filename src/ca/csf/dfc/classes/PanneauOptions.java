@@ -3,13 +3,12 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class PanneauOptions<E> extends JPanel{
+public class PanneauOptions extends JPanel{
 	private static final long serialVersionUID = -6133798062695262877L;
-	private String[] lesFormesStrings = {"Ligne","Ellipse","Rectangle"};
 	
-	JComboBox combo_Forme = new JComboBox(Formes.values());
-	JComboBox combo_Couleur = new JComboBox(Couleurs.values());
-	JComboBox combo_Trait = new JComboBox(Traits.values());
+	JComboBox<Formes> combo_Forme = new JComboBox<Formes>(Formes.values());
+	JComboBox<Couleurs> combo_Couleur = new JComboBox<Couleurs>(Couleurs.values());
+	JComboBox<Traits> combo_Trait = new JComboBox<Traits>(Traits.values());
 	
 	JLabel lbl_FormeJLabel = new JLabel("Formes");
 	JLabel lbl_Couleur = new JLabel("Couleur");

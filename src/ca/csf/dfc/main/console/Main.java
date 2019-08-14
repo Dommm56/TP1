@@ -5,7 +5,7 @@ import ca.csf.dfc.classes.PanneauOptions;
 
 import ca.csf.dfc.classes.fenetrePrincipale;
 
-public class main {
+public class Main {
 
 	public static void main(String[] args) {
 		PanneauOptions pan1 = new PanneauOptions();
