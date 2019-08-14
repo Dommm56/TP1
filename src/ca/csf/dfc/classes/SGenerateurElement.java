@@ -2,17 +2,18 @@ package ca.csf.dfc.classes;
 
 public class SGenerateurElement {
 	
-	private static CreateurElement instance = null;
+	private static GenerateurElement instance = null;
 	
 	private SGenerateurElement() {
 		
 	}
 	
-	public static CreateurElement getInstance() {
-		if(instance == null) {
-			instance = new CreateurElement();
+	public static GenerateurElement getInstance() {
+		if (instance == null) {
+			instance = new GenerateurElement();
 		}
 		return instance;
 	}
 
 }
+	
