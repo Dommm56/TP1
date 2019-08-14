@@ -5,7 +5,7 @@ import java.awt.Point;
 
 public class GenerateurElement {
 	
-	private Point m_posOrig;
+	private Point m_posOrig = new Point();
 	private double m_haut;
 	private double m_larg;
 	private Color m_couleur;
