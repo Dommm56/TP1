@@ -1,5 +1,6 @@
 package ca.csf.dfc.classes;
 
+import java.awt.Graphics;
 import java.awt.MouseInfo;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -30,15 +31,16 @@ public class PanneauDessin extends JPanel{
 		public void mouseClicked(MouseEvent p_e) {
 			GenerateurElement ge = SGenerateurElement.getInstance();
     		if (PanneauDessin.this.m_premierClickFait == false) {
-    			//ge.setPosOrig(MouseInfo.getPointerInfo().getLocation());
+    			ge.setPosOrig(PanneauDessin.this.getMousePosition());
     			PanneauDessin.this.m_premierClickFait = true;
     			PanneauDessin.this.lbl_Trait.setText("Premier click " + MouseInfo.getPointerInfo().getLocation().toString());
     		}
     		else {
-    			//ge.setPosFin(MouseInfo.getPointerInfo().getLocation());
-    			//PanneauDessin.this.m_listeDessin.add(ge.creerElement());
+    			ge.setPosFin(PanneauDessin.this.getMousePosition());
+    			PanneauDessin.this.m_listeDessin.add(ge.creerElement());
     			PanneauDessin.this.m_premierClickFait = false;
     			PanneauDessin.this.lbl_Trait.setText("deuxieme click " + MouseInfo.getPointerInfo().getLocation().toString());
+    			PanneauDessin.this.repaint();
     		}
 			
 		}
@@ -67,6 +69,13 @@ public class PanneauDessin extends JPanel{
 			
 		}
 		
-	}	
+	}
+    @Override
+    protected void paintComponent(Graphics g) {
+    	super.paintComponent(g);
+    	for (Element e : m_listeDessin) {
+    		e.paint(g);
+    	}
+    }
 }//fin JPanel
 

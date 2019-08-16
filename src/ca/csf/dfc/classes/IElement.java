@@ -1,6 +1,7 @@
 package ca.csf.dfc.classes;
 
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.Shape;
 
 public interface IElement {
@@ -13,5 +14,7 @@ public interface IElement {
 	public Color getCouleur();
 	public float getTrait();
 	public Color getRemplissage();
+	
+	public void paint(Graphics p_g);
 
 }

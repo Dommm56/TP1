@@ -24,8 +24,8 @@ private Element m_element;
 		return this.m_element;
 	}
 	
-	public void ligneBuilder(double p_posXOrig, double p_posYOrig, double p_haut, double p_larg) {
-		this.m_element.defTypeElement(new Line2D.Double(p_posXOrig, p_posYOrig, p_haut, p_larg));
+	public void ligneBuilder(double p_posXOrig, double p_posYOrig, double p_posXFin, double p_posYFin) {
+		this.m_element.defTypeElement(new Line2D.Double(p_posXOrig, p_posYOrig, p_posXFin, p_posYFin));
 	}
 
 	@Override

@@ -4,6 +4,7 @@ import java.awt.Color;
 
 public enum Couleurs {
 	
+	AUCUNE(null),
 	ROUGE(new Color(255,0,0)),
 	VERT(new Color(0,255,0)),
 	BLEU(new Color(0,0,255)),

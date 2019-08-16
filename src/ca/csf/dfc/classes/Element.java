@@ -1,6 +1,9 @@
 package ca.csf.dfc.classes;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Shape;
 
 public class Element implements IElement {
@@ -55,6 +58,22 @@ public class Element implements IElement {
 	public Color getRemplissage() {
 		
 		return this.m_remplissage;
+	}
+
+	@Override
+	public void paint(Graphics p_g) {
+		Graphics2D g2 = (Graphics2D)p_g;
+		if ((getRemplissage() != null) && (getTypeElement() != Formes.Ligne.getTypeElement())) {
+			g2.setPaint(getRemplissage());
+			g2.fill(getTypeElement());
+		}
+		g2.setColor(getCouleur());
+		g2.setStroke(new BasicStroke(getTrait()));
+		g2.draw(getTypeElement());
+		
+		
+		
+		
 	}
 
 }
