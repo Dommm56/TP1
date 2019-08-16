@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 
 public class PanneauDessin extends JPanel{
 	private static final long serialVersionUID = -6133798062695262877L;
-	JLabel lbl_Trait = new JLabel("Les dessins vont ici");
+	private JLabel lbl_Trait = new JLabel("Les dessins vont ici");
 	private boolean m_premierClickFait = false;
 	
 	private List<Element> m_listeDessin = new ArrayList<Element>();
@@ -71,10 +71,10 @@ public class PanneauDessin extends JPanel{
 		
 	}
     @Override
-    protected void paintComponent(Graphics g) {
-    	super.paintComponent(g);
+    protected void paintComponent(Graphics p_g) {
+    	super.paintComponent(p_g);
     	for (Element e : m_listeDessin) {
-    		e.paint(g);
+    		e.paint(p_g);
     	}
     }
 }//fin JPanel

@@ -11,7 +11,7 @@ public class GenerateurElement {
 	private Color m_remplissage;
 	private Formes m_typeElement;
 	private float m_trait;
-	private CreateurElement createur;
+	private CreateurElement m_createur;
 	
 	public GenerateurElement() {
 		this.m_couleur = Couleurs.NOIR.getCouleur();
@@ -49,20 +49,20 @@ public class GenerateurElement {
 		Element element = new Element();
 		switch (m_typeElement) {
 		case Rectangle:
-			createur = new CreateurElement(new RectangleBuilder());
+			m_createur = new CreateurElement(new RectangleBuilder());
 			break;
 		case Ellipse:
-			createur = new CreateurElement(new EllipseBuilder());
+			m_createur = new CreateurElement(new EllipseBuilder());
 			break;
 		case Ligne:
-			createur = new CreateurElement(new LigneBuilder());
+			m_createur = new CreateurElement(new LigneBuilder());
 			break;
 		default:
 			break;
 		}
-		if(createur != null) {
-			createur.construireElement(m_posOrig.getX(), m_posOrig.getY(), m_posFin.getX(), m_posFin.getY(), m_couleur, m_trait, m_remplissage);
-			element = createur.getElement();
+		if(m_createur != null) {
+			m_createur.construireElement(m_posOrig.getX(), m_posOrig.getY(), m_posFin.getX(), m_posFin.getY(), m_couleur, m_trait, m_remplissage);
+			element = m_createur.getElement();
 		}
 		return element;
 	}

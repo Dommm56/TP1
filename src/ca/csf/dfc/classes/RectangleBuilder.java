@@ -24,7 +24,7 @@ public class RectangleBuilder implements IElementBuilder {
 		return this.m_element;
 	}
 	
-	public void rectangleBuilder(double p_posXOrig, double p_posYOrig, double p_posXFin, double p_posYFin) {
+	private void rectangleBuilder(double p_posXOrig, double p_posYOrig, double p_posXFin, double p_posYFin) {
 		double haut = p_posYFin - p_posYOrig;
 		double larg = p_posXFin - p_posXOrig;
 		this.m_element.defTypeElement(new Rectangle2D.Double(p_posXOrig, p_posYOrig, larg, haut));
@@ -43,8 +43,8 @@ public class RectangleBuilder implements IElementBuilder {
 	}
 
 	@Override
-	public void constTypeElement(double p_posXOrig, double p_posYOrig, double p_haut, double p_larg) {
-		rectangleBuilder(p_posXOrig, p_posYOrig, p_haut, p_larg);
+	public void constTypeElement(double p_posXOrig, double p_posYOrig, double p_posXFin, double p_posYFin) {
+		rectangleBuilder(p_posXOrig, p_posYOrig, p_posXFin, p_posYFin);
 		
 	}
 

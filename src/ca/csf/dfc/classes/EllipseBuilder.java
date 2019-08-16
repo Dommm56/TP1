@@ -23,7 +23,7 @@ public class EllipseBuilder implements IElementBuilder {
 		return this.m_element;
 	}
 	
-	public void ellipseBuilder(double p_posXOrig, double p_posYOrig, double p_posXFin, double p_posYFin) {
+	private void ellipseBuilder(double p_posXOrig, double p_posYOrig, double p_posXFin, double p_posYFin) {
 		double haut = p_posYFin - p_posYOrig;
 		double larg = p_posXFin - p_posXOrig;
 		this.m_element.defTypeElement(new Ellipse2D.Double(p_posXOrig, p_posYOrig, larg, haut));
@@ -42,8 +42,8 @@ public class EllipseBuilder implements IElementBuilder {
 	}
 
 	@Override
-	public void constTypeElement(double p_posXOrig, double p_posYOrig, double p_haut, double p_larg) {
-		ellipseBuilder(p_posXOrig, p_posYOrig, p_haut, p_larg);
+	public void constTypeElement(double p_posXOrig, double p_posYOrig, double p_posXFin, double p_posYFin) {
+		ellipseBuilder(p_posXOrig, p_posYOrig, p_posXFin, p_posYFin);
 		
 	}
 

@@ -18,8 +18,6 @@ public class PanneauOptions extends JPanel{
 	JLabel lbl_Couleur = new JLabel("Couleur");
 	JLabel lbl_Trait = new JLabel("Trait");
 	JLabel lbl_Remplissage = new JLabel("Remplissage");
-	
-	GenerateurElement ge = SGenerateurElement.getInstance();
 
 	public PanneauOptions() {
 		super();
@@ -39,6 +37,7 @@ public class PanneauOptions extends JPanel{
         this.add(combo_Remplissage);
         this.combo_Remplissage.setSelectedItem(Couleurs.AUCUNE);
         
+        GenerateurElement ge = SGenerateurElement.getInstance();
         
         Formes forme = (Formes)this.combo_Forme.getSelectedItem();
         Couleurs remplissage = (Couleurs)this.combo_Remplissage.getSelectedItem();

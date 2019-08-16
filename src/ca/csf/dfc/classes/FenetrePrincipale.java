@@ -12,10 +12,10 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 
-public class fenetrePrincipale extends JFrame {
+public class FenetrePrincipale extends JFrame {
 	private static final long serialVersionUID = 1L;
 
-	public fenetrePrincipale(JPanel p_PanneauPrincipal,JPanel p_PanneauSecondaire)
+	public FenetrePrincipale(JPanel p_PanneauPrincipal,JPanel p_PanneauSecondaire)
     {
         super("TP POO");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
