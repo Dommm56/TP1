@@ -2,14 +2,24 @@ package ca.csf.dfc.classes;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
+import com.sun.glass.ui.Application;
+
+import javax.swing.JFileChooser;
+import java.io.File;
+import java.io.FileWriter; 
 
 
 public class FenetrePrincipale extends JFrame {
@@ -52,7 +62,80 @@ public class FenetrePrincipale extends JFrame {
 			this.menuFichier.add(this.itm_Ouvrir);
 			this.menuFichier.add(this.itm_Enregistrer);
 			this.menuFichier.add(this.itm_Quitter);
-	
+			
+			//definir OUVRIR
+			this.itm_Ouvrir.addActionListener(new GestOuvrir());
+			this.itm_Quitter.addActionListener(new GestQuitter());
+			this.itm_Nouveau.addActionListener(new GestNouveau());
+			this.itm_Enregistrer.addActionListener(new GestEnregistrer());
+			
+			}
+			
+			
 		}//fin
-	
-}//fin fenetrePrincipale
+		
+		class GestOuvrir implements ActionListener {
+
+			public GestOuvrir() {
+				// TODO Auto-generated constructor stub
+			}
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JFileChooser fileChooser = new JFileChooser();
+				fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+				int result = fileChooser.showOpenDialog(fileChooser );
+				if (result == JFileChooser.APPROVE_OPTION) {
+					File selectedFile1 = fileChooser.getSelectedFile();
+				}//fin actionPerformed
+				
+				
+		}//fin GestOuvrir
+		}
+			
+		class GestQuitter implements ActionListener {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					System.exit(0);
+					}//fin actionPerformed
+					
+					
+			}//fin GestQuitter
+		
+		class GestNouveau implements ActionListener {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int response = javax.swing.JOptionPane.showConfirmDialog((Component) null, "Voulez-vous sauvegarder?","Nouveau Fichier", JOptionPane.YES_NO_CANCEL_OPTION); 
+				if (response == JOptionPane.NO_OPTION) {
+				      //ici non
+				    } else if (response == JOptionPane.YES_OPTION) {
+				      //metre le new gestionEnregistrer
+				    } else if (response == JOptionPane.CLOSED_OPTION) {
+				      //ici mettre le Nouveau
+				    }	
+			}//fin actionPerformed
+							
+		}//fin GestNouveau
+		
+		class GestEnregistrer implements ActionListener {
+
+			public GestEnregistrer() {
+				// TODO Auto-generated constructor stub
+			}
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				JFileChooser fc = new JFileChooser();
+		          fc.setCurrentDirectory( new File( System.getProperty( "user.dir" ) ) );
+		          int rsp = fc.showSaveDialog(fc) ;
+
+				}//fin actionPerformed
+			
+				
+		}//fin GestEnregistrer
+		
+		
+		
+//fin fenetrePrincipale
