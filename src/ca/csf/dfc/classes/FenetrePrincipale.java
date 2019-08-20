@@ -16,9 +16,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JFileChooser;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Properties;
 
 import javax.xml.parsers.*;
 import javax.xml.transform.*;
@@ -139,73 +141,50 @@ public class FenetrePrincipale extends JFrame {
 		          fc.setCurrentDirectory( new File( System.getProperty( "user.dir" ) ) );
 		          int rsp = fc.showSaveDialog(fc) ;
 		          String filename = fc.getSelectedFile().getName()+".xml";
-		          saveToXML(filename);
+		          try {
+					saveToXML(filename);
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 		          if (rsp ==1) {
 					//code savuer dans fichier
 		          }
 		          
 				}//fin actionPerformed	
 			
-			public void saveToXML(String xml) {
-				String role1 = null;
-				String role2 = null;
-				String role3 = null;
-				String role4 = null;
-				ArrayList<String> rolev;
+			public void saveToXML(String xml) throws FileNotFoundException {
+				
+				variableForme = 
+				varibleCouleur=
+				variableTrait=
+				variableRemplissage=
+				variablePositionIniX=
+				variablePositionIniY=
+				variablePositionFinaleX=
+				variablePositionFinaleY=
+				 try {
+						Properties properties = new Properties();
+						properties.setProperty("Forme", variableForme);
+						properties.setProperty("Couleur", varibleCouleur);
+						properties.setProperty("Trait", variableTrait);
+						properties.setProperty("Remplissage", variableRemplissage);
+						properties.setProperty("PositionInitialeX", variablePositionIniX);
+						properties.setProperty("PositionInitialeY", variablePositionIniY);
+						properties.setProperty("PositionFinaleX", variablePositionFinaleX);
+						properties.setProperty("PositionFinaleY", variablePositionFinaleY);
 
-			    Document dom;
-			    org.w3c.dom.Element e = null;
+						
+						FileOutputStream fileOut = new FileOutputStream(xml);
+						properties.storeToXML(fileOut, "Proprietes");
+						fileOut.close();
+					} catch (FileNotFoundException e) {
+						e.printStackTrace();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
 
-			    // instance of a DocumentBuilderFactory
-			    DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-			    try {
-			        // use factory to get an instance of document builder
-			        DocumentBuilder db = dbf.newDocumentBuilder();
-			        // create instance of DOM
-			        dom = db.newDocument();
-
-			        // create the root element
-			        org.w3c.dom.Element rootEle = dom.createElement("roles");
-
-			        // create data elements and place them under root
-			        e = dom.createElement("role1");
-			        e.appendChild(dom.createTextNode(role1));
-			        rootEle.appendChild(e);
-
-			        e = dom.createElement("role2");
-			        e.appendChild(dom.createTextNode(role2));
-			        rootEle.appendChild(e);
-
-			        e = dom.createElement("role3");
-			        e.appendChild(dom.createTextNode(role3));
-			        rootEle.appendChild(e);
-
-			        e = dom.createElement("role4");
-			        e.appendChild(dom.createTextNode(role4));
-			        rootEle.appendChild(e);
-
-			        dom.appendChild(rootEle);
-
-			        try {
-			            Transformer tr = TransformerFactory.newInstance().newTransformer();
-			            tr.setOutputProperty(OutputKeys.INDENT, "yes");
-			            tr.setOutputProperty(OutputKeys.METHOD, "xml");
-			            tr.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-			            tr.setOutputProperty(OutputKeys.DOCTYPE_SYSTEM, "roles.dtd");
-			            tr.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
-
-			            // send DOM to file
-			            tr.transform(new DOMSource(dom), 
-			                                 new StreamResult(new FileOutputStream(xml)));
-
-			        } catch (TransformerException te) {
-			            System.out.println(te.getMessage());
-			        } catch (IOException ioe) {
-			            System.out.println(ioe.getMessage());
-			        }
-			    } catch (ParserConfigurationException pce) {
-			        System.out.println("UsersXML: Error trying to instantiate DocumentBuilder " + pce);
-			    }
+				
 			}//fin methode 
 		}//fin GestEnregistrer
 		
