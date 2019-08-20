@@ -138,8 +138,12 @@ public class FenetrePrincipale extends JFrame {
 				JFileChooser fc = new JFileChooser();
 		          fc.setCurrentDirectory( new File( System.getProperty( "user.dir" ) ) );
 		          int rsp = fc.showSaveDialog(fc) ;
-		          String filename = fc.getSelectedFile().getName();
+		          String filename = fc.getSelectedFile().getName()+".xml";
 		          saveToXML(filename);
+		          if (rsp ==1) {
+					//code savuer dans fichier
+		          }
+		          
 				}//fin actionPerformed	
 			
 			public void saveToXML(String xml) {
@@ -216,8 +220,11 @@ public class FenetrePrincipale extends JFrame {
 				JFileChooser fc = new JFileChooser();
 		          fc.setCurrentDirectory( new File( System.getProperty( "user.dir" ) ) );
 		          int rsp = fc.showSaveDialog(fc) ;
-		          String filename = fc.getSelectedFile().getName();
+		          String filename = fc.getSelectedFile().getName()+".svg";
 		          saveToSVG(filename);
+		          if (rsp ==1) {
+						//code savuer dans fichier
+			          }
 				}//fin actionPerformed	
 			
 			public void saveToSVG(String xml) {
