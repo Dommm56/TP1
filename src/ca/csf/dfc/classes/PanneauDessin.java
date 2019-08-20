@@ -15,7 +15,7 @@ public class PanneauDessin extends JPanel{
 	private JLabel lbl_Trait = new JLabel("Les dessins vont ici");
 	private boolean m_premierClickFait = false;
 	
-	private List<Element> m_listeDessin = new ArrayList<Element>();
+	public List<Element> m_listeDessin = new ArrayList<Element>();
 	
 	public PanneauDessin() {
 		super();  
@@ -25,7 +25,9 @@ public class PanneauDessin extends JPanel{
         	
     } //fin Panneau1
         
-    private class GestClickSouris implements MouseListener {
+    
+
+	private class GestClickSouris implements MouseListener {
 
 		@Override
 		public void mouseClicked(MouseEvent p_e) {

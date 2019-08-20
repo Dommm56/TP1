@@ -6,7 +6,8 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Shape;
 
-public class Element implements IElement {
+class Element implements IElement {
+	
 	
 	private Shape m_typeElement;
 	private Color m_couleur;

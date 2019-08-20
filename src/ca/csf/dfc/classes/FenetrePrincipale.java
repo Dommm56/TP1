@@ -27,6 +27,9 @@ import javax.xml.transform.*;
 import javax.xml.transform.dom.*;
 import javax.xml.transform.stream.*;
 import org.xml.sax.*;
+
+import ca.csf.dfc.main.console.Main;
+
 import org.w3c.dom.*;
 
 public class FenetrePrincipale extends JFrame {
@@ -154,30 +157,20 @@ public class FenetrePrincipale extends JFrame {
 				}//fin actionPerformed	
 			
 			public void saveToXML(String xml) throws FileNotFoundException {
-				
-				variableForme = 
-				varibleCouleur=
-				variableTrait=
-				variableRemplissage=
-				variablePositionIniX=
-				variablePositionIniY=
-				variablePositionFinaleX=
-				variablePositionFinaleY=
+			
 				 try {
+					 
 						Properties properties = new Properties();
-						properties.setProperty("Forme", variableForme);
+						properties.setProperty("Forme", );
 						properties.setProperty("Couleur", varibleCouleur);
 						properties.setProperty("Trait", variableTrait);
 						properties.setProperty("Remplissage", variableRemplissage);
-						properties.setProperty("PositionInitialeX", variablePositionIniX);
-						properties.setProperty("PositionInitialeY", variablePositionIniY);
-						properties.setProperty("PositionFinaleX", variablePositionFinaleX);
-						properties.setProperty("PositionFinaleY", variablePositionFinaleY);
-
-						
-						FileOutputStream fileOut = new FileOutputStream(xml);
-						properties.storeToXML(fileOut, "Proprietes");
-						fileOut.close();
+						properties.setProperty("PositionInitialeX", variablePositionIni);
+						properties.setProperty("PositionFinaleX", variablePositionFinale);
+										
+					FileOutputStream fileOut = new FileOutputStream(xml);
+					properties.storeToXML(fileOut, "Proprietes");
+					fileOut.close();
 					} catch (FileNotFoundException e) {
 						e.printStackTrace();
 					} catch (IOException e) {

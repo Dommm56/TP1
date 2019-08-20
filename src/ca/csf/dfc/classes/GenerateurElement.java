@@ -4,7 +4,36 @@ import java.awt.Color;
 import java.awt.Point;
 
 public class GenerateurElement {
-	
+
+	public Point getM_posOrig() {
+		return m_posOrig;
+	}
+
+	public Point getM_posFin() {
+		return m_posFin;
+	}
+
+	public Color getM_couleur() {
+		return m_couleur;
+	}
+
+	public Color getM_remplissage() {
+		return m_remplissage;
+	}
+
+	public Formes getM_typeElement() {
+		return m_typeElement;
+	}
+
+	public float getM_trait() {
+		return m_trait;
+	}
+
+	public CreateurElement getM_createur() {
+		return m_createur;
+	}
+
+
 	private Point m_posOrig = new Point();
 	private Point m_posFin;
 	private Color m_couleur;
