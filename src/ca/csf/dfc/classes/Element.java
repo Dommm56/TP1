@@ -57,4 +57,9 @@ public class Element implements IElement {
 		return this.m_remplissage;
 	}
 
+	public String replaceAll(String string, String string2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

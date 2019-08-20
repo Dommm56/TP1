@@ -78,8 +78,8 @@ public class ListenerPanneauDessin implements MouseInputListener {
 	public double getMousePosY() {
 		return this.p_mousePos.getY();
 	}
-	
-	public List<Element> getListeElementDessin() {
+
+	public  List<Element> getListeElementDessin() {
 		return this.p_listeDessin;
 	}
 
