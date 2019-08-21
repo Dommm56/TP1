@@ -10,7 +10,8 @@ import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 /*
- * 
+ * @description la classe Panneau dessin utilise linterface Jpannel, et elle est utilisee par la fenetre principale.
+ * Cest dans cette classe que lon va pouvoir cliquer pour produire les formes.
  */
 public class PanneauDessin extends JPanel{
 	private static final long serialVersionUID = -6133798062695262877L;
@@ -18,66 +19,62 @@ public class PanneauDessin extends JPanel{
 	private boolean m_premierClickFait = false;	
 	public List<Element> m_listeDessin = new ArrayList<Element>();
 	
+	/*
+	 * Constructeur par default, pour ajouter une petite phrase et ajouter la gestion des clics de souris dans ce panneau
+	 */
 	public PanneauDessin() {
 		super();  
         this.add(lbl_Trait); 
-        this.addMouseListener(new GestClickSouris());
-        	
+        this.addMouseListener(new GestClickSouris());   	
     } //fin Panneau1
-        
-    
 
+	/*
+	 * description: Cette classe permet de gerer les clic de souris afin de produire les dessins.
+	 * Le premier clique definit la position initiale et le deuxieme clique definit la position finale des formes.
+	 */
 	private class GestClickSouris implements MouseListener {
-
 		@Override
 		public void mouseClicked(MouseEvent p_e) {
 			GenerateurElement ge = SGenerateurElement.getInstance();
     		if (PanneauDessin.this.m_premierClickFait == false) {
     			ge.setPosOrig(PanneauDessin.this.getMousePosition());
     			PanneauDessin.this.m_premierClickFait = true;
-    			PanneauDessin.this.lbl_Trait.setText("Premier click " + MouseInfo.getPointerInfo().getLocation().toString());
+    			PanneauDessin.this.lbl_Trait.setText("Premier clic " + MouseInfo.getPointerInfo().getLocation().toString());
+    			
     		}
     		else {
     			ge.setPosFin(PanneauDessin.this.getMousePosition());
     			PanneauDessin.this.m_listeDessin.add(ge.creerElement());
     			PanneauDessin.this.m_premierClickFait = false;
-    			PanneauDessin.this.lbl_Trait.setText("deuxieme click " + MouseInfo.getPointerInfo().getLocation().toString());
+    			PanneauDessin.this.lbl_Trait.setText("deuxieme clic " + MouseInfo.getPointerInfo().getLocation().toString());
     			PanneauDessin.this.repaint();
-    		}
-			
-		}
+    		}//fin if		
+		}//fin mouseclicked
 
 		@Override
 		public void mouseEntered(MouseEvent p_e) {
-			// TODO Auto-generated method stub
-			
 		}
 
 		@Override
 		public void mouseExited(MouseEvent p_e) {
-			// TODO Auto-generated method stub
-			
 		}
 
 		@Override
 		public void mousePressed(MouseEvent p_e) {
-			// TODO Auto-generated method stub
-			
 		}
 
 		@Override
 		public void mouseReleased(MouseEvent p_e) {
-			// TODO Auto-generated method stub
-			
 		}
-		
-	}
+	}//fin GestSouris
+	
+	
     @Override
     protected void paintComponent(Graphics p_g) {
     	super.paintComponent(p_g);
     	for (Element e : m_listeDessin) {
     		e.paint(p_g);
     	}
-    }
+    }//fin paintComponent
 }//fin JPanel
 
