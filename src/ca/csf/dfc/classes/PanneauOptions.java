@@ -1,11 +1,15 @@
 package ca.csf.dfc.classes;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/*
+ * @description: La classe PanneauOption implemente linterface Jpanel, cette classe permet de regouper les differents groupbox present 
+ * dans le panneau. Ces groupbox permettent de choisir les propriete des formes que lon veut creer. Ces comboxBox vont chercher
+ * les elements de nos differents enumerations de proprietes
+ */
 public class PanneauOptions extends JPanel{
 	private static final long serialVersionUID = -6133798062695262877L;
 	
@@ -18,7 +22,10 @@ public class PanneauOptions extends JPanel{
 	JLabel lbl_Couleur = new JLabel("Couleur");
 	JLabel lbl_Trait = new JLabel("Trait");
 	JLabel lbl_Remplissage = new JLabel("Remplissage");
-
+	
+	/*
+	 * description: COnstructeur par defaut qui permet dajouter les labels, les combobox et les valeurs par defaut
+	 */
 	public PanneauOptions() {
 		super();
         this.add(lbl_FormeJLabel);
@@ -48,6 +55,10 @@ public class PanneauOptions extends JPanel{
         ge.setCouleur(couleur);
         ge.setRemplissage(remplissage);
         
+        
+        /*
+         * Voici les differents listeners qui permettent de voir quels proprietes sont choisient pour la creation des formes
+         */
         ItemListener formeListener = new ItemListener() {
 		      public void itemStateChanged(ItemEvent itemEvent) {
 		    	  int etat = itemEvent.getStateChange();
@@ -92,6 +103,6 @@ public class PanneauOptions extends JPanel{
 		};
 		combo_Couleur.addItemListener(couleurListener);
 		
-	}//fin Panneau1	
+	}//fin Constructeur default
 	
-}//fin JPanel
+}//fin PanneauOptions

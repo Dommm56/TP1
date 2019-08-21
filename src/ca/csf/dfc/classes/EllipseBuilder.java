@@ -2,11 +2,23 @@ package ca.csf.dfc.classes;
 
 import java.awt.Color;
 import java.awt.geom.Ellipse2D;
-
+/**
+ * Classe qui implémente l'interface IElementBuilder
+ * Cette classe permet de construire une ellipse grace au createurElement
+ * Elle partie intégrante d'un design pattern de type Builder
+ * 
+ * @author Philippe Deschênes
+ *
+ */
 public class EllipseBuilder implements IElementBuilder {
-	
+	/**
+	 * Element qui est une ellipse de type Ellipse2D.Double
+	 */
 	private Element m_element;
-	
+	/**
+	 * Constructeur de l'éllipse
+	 * Initialise la donnée membre
+	 */
 	public EllipseBuilder() {
 		this.m_element = new Element();
 	}
@@ -23,6 +35,7 @@ public class EllipseBuilder implements IElementBuilder {
 		return this.m_element;
 	}
 	/**
+	 * Méthode propre à la classe qui permet de construire correctement l'éllipse selon les paramètres fournis
 	 * 
 	 * @param p_posXOrig
 	 * @param p_posYOrig

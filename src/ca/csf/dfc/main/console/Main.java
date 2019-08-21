@@ -7,10 +7,11 @@ import ca.csf.dfc.classes.FenetrePrincipale;
 
 public class Main {
 
+	/*
+	 * La classe main cree une fenetre principae avec comme 2 arguements les 2 panneaux necessaires
+	 */
 	public static void main(String[] args) {
-		PanneauOptions pan1 = new PanneauOptions();
-		PanneauDessin pan2 = new PanneauDessin();		
-		new FenetrePrincipale(pan1, pan2).setVisible(true);
-
+		new FenetrePrincipale(new PanneauOptions(), new PanneauDessin()).setVisible(true);
+		
 	}// fin main
-}// fin main
+}// fin Main
