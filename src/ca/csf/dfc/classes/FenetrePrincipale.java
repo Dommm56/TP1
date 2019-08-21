@@ -191,14 +191,14 @@ public class FenetrePrincipale extends JFrame {
 						properties.setProperty("PositionInitialeX", "");
 						properties.setProperty("PositionFinaleX", "");
 										
-					FileOutputStream fileOut = new FileOutputStream(xml);
-					properties.storeToXML(fileOut, "Proprietes");
-					fileOut.close();
-					} catch (FileNotFoundException e) {
+					    FileOutputStream fileOut = new FileOutputStream(xml);
+					    properties.storeToXML(fileOut, "Proprietes");
+					    fileOut.close();
+					 } catch (FileNotFoundException e) {
 						e.printStackTrace();
-					} catch (IOException e) {
+					 } catch (IOException e) {
 						e.printStackTrace();
-					}
+					 }
 
 				
 			}//fin methode 
@@ -218,7 +218,6 @@ public class FenetrePrincipale extends JFrame {
 		          String filename = fc.getSelectedFile().getName()+".svg";
 		          saveToSVG(filename);
 		          if (rsp == JFileChooser.APPROVE_OPTION) {
-						//code savuer dans fichier
 		        	File fichier = fc.getSelectedFile();
 		        	fichier.getAbsolutePath();  
 			          }
