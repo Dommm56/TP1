@@ -9,18 +9,18 @@ import java.util.List;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
+/*
+ * 
+ */
 public class PanneauDessin extends JPanel{
 	private static final long serialVersionUID = -6133798062695262877L;
 	private JLabel lbl_Trait = new JLabel("Les dessins vont ici");
-	private boolean m_premierClickFait = false;
-	
+	private boolean m_premierClickFait = false;	
 	public List<Element> m_listeDessin = new ArrayList<Element>();
 	
 	public PanneauDessin() {
 		super();  
-        this.add(lbl_Trait);
-        
+        this.add(lbl_Trait); 
         this.addMouseListener(new GestClickSouris());
         	
     } //fin Panneau1
