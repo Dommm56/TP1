@@ -16,10 +16,16 @@ import javax.swing.JFileChooser;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 import javax.xml.parsers.*;
+import javax.xml.stream.FactoryConfigurationError;
+import javax.xml.stream.XMLOutputFactory;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamWriter;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.*;
 import javax.xml.transform.stream.*;
@@ -165,7 +171,7 @@ public class FenetrePrincipale extends JFrame {
 			public void saveToXML(String xml) throws FileNotFoundException {	
 				 try {
 					Properties properties = new Properties();
-					properties.setProperty("Forme", "");
+					properties.setProperty("Forme","");
 					properties.setProperty("Couleur","");
 					properties.setProperty("Trait", "");
 					properties.setProperty("Remplissage", "");
@@ -199,14 +205,91 @@ public class FenetrePrincipale extends JFrame {
 		          fc.setCurrentDirectory( new File( System.getProperty( "user.dir" ) ) );
 		          int rsp = fc.showSaveDialog(fc) ;
 		          String filename = fc.getSelectedFile().getName()+".svg";
-		          saveToSVG(filename);
+		          try {
+					saveToSVG(filename, null, null);
+				} catch (XMLStreamException | FactoryConfigurationError | IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 		          if (rsp == JFileChooser.APPROVE_OPTION) {
 		        	File fichier = fc.getSelectedFile();
 		        	fichier.getAbsolutePath();  
 			          }
 				}//fin actionPerformed	
 			
-			public void saveToSVG(String xml) {
+			/**
+			 * 
+			 * @param filename
+			 * @param p_File
+			 * @param p_element
+			 * @throws XMLStreamException
+			 * @throws FactoryConfigurationError
+			 * @throws IOException
+			 */
+			public void saveToSVG(String filename,File p_File,List<Element>p_element) throws XMLStreamException, FactoryConfigurationError, IOException {
+				
+				XMLStreamWriter doc = null;
+				FileWriter output = new FileWriter(filename);
+
+				doc = XMLOutputFactory.newInstance().createXMLStreamWriter(output);
+				doc.writeStartDocument();
+
+				doc.writeStartElement("svg");
+				doc.writeAttribute("xmlns", "http://www.w3.org/2000/svg");
+				doc.writeAttribute("version", "1.1");
+				doc.writeAttribute("width",Integer.toString(100));
+				doc.writeAttribute("height", Integer.toString(100));
+				doc.writeCharacters(filename.replaceAll(".svg", ""));
+				doc.writeStartElement("titre");
+				doc.writeEndElement();
+				
+				doc.writeStartElement("rect");
+				doc.writeAttribute("width", "100%");
+				doc.writeAttribute("height", "100%");
+				doc.writeAttribute("x", "0");
+				doc.writeAttribute("y", "0");
+				doc.writeEndElement();
+				
+				for (PanneauDessin e : p_element) {
+					if (e.getName() == "Ligne") {
+						doc.writeStartElement("line");
+						doc.writeAttribute("x1", Double.toString(e.getX()));
+						doc.writeAttribute("y1", Double.toString(e.getY()));
+						doc.writeAttribute("x2", Double.toString(e.getX() + e.getAlignmentX()));
+						doc.writeAttribute("y2", Double.toString(e.getY() + e.getAlignmentY()));
+					} else {
+						if (e.getName() == "Rectangle") {
+							doc.writeStartElement("rect");
+							doc.writeAttribute("width", Double.toString(e.getAlignmentX()));
+							doc.writeAttribute("height", Double.toString(e.getAlignmentY()));
+							doc.writeAttribute("x", Double.toString(e.getX()));
+							doc.writeAttribute("y", Double.toString(e.getY()));
+						} else if (e.getName() == "Ellipse") {
+							double rx = e.getAlignmentX() * 1.5;
+							double ry = e.getAlignmentY() * 1.5;
+							doc.writeStartElement("ellipse");
+							doc.writeAttribute("rx", Double.toString(rx));
+							doc.writeAttribute("ry", Double.toString(ry));
+							doc.writeAttribute("cx", Double.toString(e.getX() + rx));
+							doc.writeAttribute("cy", Double.toString(e.getY() + ry));
+						}
+						
+						doc.writeAttribute("fill-opacity", Double.toString(e.getColorModel().getAlpha(0) / 255));
+					}
+					doc.writeAttribute("stroke-width", Integer.toString(e.getWidth()));					
+					doc.writeEndElement();
+				}
+				doc.writeEndElement();
+				doc.writeEndDocument();
+				if (doc != null) {
+					doc.flush();
+					doc.close();
+				}
+				
+				
+				
+				
+				
 	
 			}//fin methode 
 		}//fin GestEnregistrer
