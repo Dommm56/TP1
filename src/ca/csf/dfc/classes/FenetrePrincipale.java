@@ -25,7 +25,12 @@ import javax.xml.transform.dom.*;
 import javax.xml.transform.stream.*;
 import org.w3c.dom.*;
 
+import ca.csf.dfc.main.console.Main;
 
+/*
+ * La classe FenetrePrincipale implemente linterface JFrame. Cette classe sert a placer les differents panneaux necessaires 
+ * au programme et permet de regrouper le tout ensemble.
+ */
 public class FenetrePrincipale extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
@@ -121,9 +126,9 @@ public class FenetrePrincipale extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				int response = javax.swing.JOptionPane.showConfirmDialog((Component) null, "Voulez-vous sauvegarder?","Nouveau Fichier", JOptionPane.YES_NO_CANCEL_OPTION); 
 				if (response == JOptionPane.NO_OPTION) {
-				      
+					
 				} else if (response == JOptionPane.YES_OPTION) {
-				     
+					
 				} else if (response == JOptionPane.CLOSED_OPTION) {
 				      
 				}//fin if
