@@ -1,7 +1,11 @@
 package ca.csf.dfc.classes;
 
 import java.awt.Color;
-
+/**
+ * 
+ * @author ebbab
+ *
+ */
 public enum Couleurs {
 	
 	AUCUNE(null),
@@ -13,7 +17,9 @@ public enum Couleurs {
 	CYAN(new Color(0,255,255)),
 	BLANC(new Color(255,255,255)),
 	NOIR(new Color(0,0,0));
-	
+	/**
+	 * 
+	 */
 	private Color m_couleur;
 	 
     Couleurs(Color p_couleur) {

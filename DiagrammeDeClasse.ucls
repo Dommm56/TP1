@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.3" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <interface id="1" language="java" name="ca.csf.dfc.classes.IElement" project="TP1-master" 
+    file="/TP1-master/src/ca/csf/dfc/classes/IElement.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="164" x="1459" y="1334"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="2" language="java" name="ca.csf.dfc.classes.PanneauDessin" project="TP1-master" 
+    file="/TP1-master/src/ca/csf/dfc/classes/PanneauDessin.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="178" x="1160" y="516"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="ca.csf.dfc.classes.Element" project="TP1-master" 
+    file="/TP1-master/src/ca/csf/dfc/classes/Element.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="164" x="1459" y="979"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="ca.csf.dfc.classes.GestEnregistrerSVG" project="TP1-master" 
+    file="/TP1-master/src/ca/csf/dfc/classes/FenetrePrincipale.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="194" x="190" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="ca.csf.dfc.classes.FenetrePrincipale" project="TP1-master" 
+    file="/TP1-master/src/ca/csf/dfc/classes/FenetrePrincipale.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="182" x="424" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="ca.csf.dfc.classes.GestOuvrir" project="TP1-master" 
+    file="/TP1-master/src/ca/csf/dfc/classes/FenetrePrincipale.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="194" x="646" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="ca.csf.dfc.classes.RectangleBuilder" project="TP1-master" 
+    file="/TP1-master/src/ca/csf/dfc/classes/RectangleBuilder.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="281" x="1378" y="516"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="ca.csf.dfc.classes.GestQuitter" project="TP1-master" 
+    file="/TP1-master/src/ca/csf/dfc/classes/FenetrePrincipale.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="194" x="880" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="ca.csf.dfc.classes.GenerateurElement" project="TP1-master" 
+    file="/TP1-master/src/ca/csf/dfc/classes/GenerateurElement.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="423" width="186" x="2341" y="516"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="10" language="java" name="ca.csf.dfc.classes.Couleurs" project="TP1-master" 
+    file="/TP1-master/src/ca/csf/dfc/classes/Couleurs.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="125" x="1114" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="11" language="java" name="ca.csf.dfc.classes.PanneauOptions" project="TP1-master" 
+    file="/TP1-master/src/ca/csf/dfc/classes/PanneauOptions.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="243" x="1279" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="12" language="java" name="ca.csf.dfc.classes.Traits" project="TP1-master" 
+    file="/TP1-master/src/ca/csf/dfc/classes/Traits.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="119" x="1562" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="13" language="java" name="ca.csf.dfc.classes.SGenerateurElement" project="TP1-master" 
+    file="/TP1-master/src/ca/csf/dfc/classes/SGenerateurElement.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="185" x="2342" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="14" language="java" name="ca.csf.dfc.classes.Formes" project="TP1-master" 
+    file="/TP1-master/src/ca/csf/dfc/classes/Formes.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="143" x="2341" y="979"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="15" language="java" name="ca.csf.dfc.classes.PanneauDessin.GestClickSouris" project="TP1-master" 
+    file="/TP1-master/src/ca/csf/dfc/classes/PanneauDessin.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="193" x="1160" y="979"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="16" language="java" name="ca.csf.dfc.classes.IElementBuilder" project="TP1-master" 
+    file="/TP1-master/src/ca/csf/dfc/classes/IElementBuilder.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="281" x="1699" y="1334"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="17" language="java" name="ca.csf.dfc.classes.LigneBuilder" project="TP1-master" 
+    file="/TP1-master/src/ca/csf/dfc/classes/LigneBuilder.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="281" x="2020" y="516"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="ca.csf.dfc.classes.EllipseBuilder" project="TP1-master" 
+    file="/TP1-master/src/ca/csf/dfc/classes/EllipseBuilder.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="281" x="1699" y="516"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="ca.csf.dfc.classes.CreateurElement" project="TP1-master" 
+    file="/TP1-master/src/ca/csf/dfc/classes/CreateurElement.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="359" x="1942" y="979"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="ca.csf.dfc.classes.GestNouveau" project="TP1-master" 
+    file="/TP1-master/src/ca/csf/dfc/classes/FenetrePrincipale.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="194" x="1721" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="ca.csf.dfc.main.console.Main" project="TP1-master" 
+    file="/TP1-master/src/ca/csf/dfc/main/console/Main.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="113" x="1955" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="ca.csf.dfc.classes.GestEnregistrerXML" project="TP1-master" 
+    file="/TP1-master/src/ca/csf/dfc/classes/FenetrePrincipale.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="194" x="2108" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="23">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="24" name="instance"/>      
+      <multiplicity id="25" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="26">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="27" name="m_listeDessin"/>      
+      <multiplicity id="28" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="29">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="30" name="m_element"/>      
+      <multiplicity id="31" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="32">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="33" name="m_typeElement"/>      
+      <multiplicity id="34" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="35">    
+    <bendpoint x="1653" y="979"/>    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="16"/>  
+  </realization>  
+  <association id="36">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="37" name="m_elementBuilder"/>      
+      <multiplicity id="38" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="39">    
+    <bendpoint x="1708" y="979"/>    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="16"/>  
+  </realization>  
+  <realization id="40">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <association id="41">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="42" name="m_element"/>      
+      <multiplicity id="43" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="44">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="45" name="m_element"/>      
+      <multiplicity id="46" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="47">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="48" name="m_createur"/>      
+      <multiplicity id="49" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="50">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="15"/>  
+  </nesting>  
+  <realization id="51">    
+    <bendpoint x="1868" y="979"/>    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="16"/>  
+  </realization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

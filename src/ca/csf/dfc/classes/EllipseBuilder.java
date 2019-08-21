@@ -22,7 +22,13 @@ public class EllipseBuilder implements IElementBuilder {
 		
 		return this.m_element;
 	}
-	
+	/**
+	 * 
+	 * @param p_posXOrig
+	 * @param p_posYOrig
+	 * @param p_posXFin
+	 * @param p_posYFin
+	 */
 	private void ellipseBuilder(double p_posXOrig, double p_posYOrig, double p_posXFin, double p_posYFin) {
 		double haut = p_posYFin - p_posYOrig;
 		double larg = p_posXFin - p_posXOrig;

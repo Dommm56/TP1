@@ -8,6 +8,9 @@ import java.awt.Shape;
 
 class Element implements IElement {
 	
+	/**
+	 * 
+	 */
 	
 	private Shape m_typeElement;
 	private Color m_couleur;
@@ -15,6 +18,7 @@ class Element implements IElement {
 	private Color m_remplissage;
 	
 	@Override
+	
 	public void defTypeElement(Shape p_shape) {
 		this.m_typeElement = p_shape;
 	}

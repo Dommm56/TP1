@@ -7,6 +7,7 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.lang.model.element.Element;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -18,6 +19,7 @@ import javax.swing.JFileChooser;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Properties;
@@ -28,12 +30,22 @@ import javax.xml.transform.dom.*;
 import javax.xml.transform.stream.*;
 import org.xml.sax.*;
 
+import com.sun.xml.internal.messaging.saaj.soap.impl.ElementFactory;
+
 import ca.csf.dfc.main.console.Main;
 
 import org.w3c.dom.*;
 
+
 public class FenetrePrincipale extends JFrame {
+	
 	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * 
+	 * @param p_PanneauPrincipal
+	 * @param p_PanneauSecondaire
+	 */
 	
 	public FenetrePrincipale(JPanel p_PanneauPrincipal,JPanel p_PanneauSecondaire)
     {
@@ -55,7 +67,7 @@ public class FenetrePrincipale extends JFrame {
         
     }//fin
 	
-		//creation dun menu
+		//creation d'un menu
 		JMenuBar menuBar = new JMenuBar();
 
 		//creation des elements principaux du menu
@@ -66,6 +78,9 @@ public class FenetrePrincipale extends JFrame {
 		JMenuItem itm_EnregistrerSVG= new JMenuItem("Enregistrer SVG");
 		JMenuItem itm_Quitter = new JMenuItem("Quitter");
 		
+		/**
+		 * 
+		 */
 		private void definirMenu() {
 			this.menuBar.add(menuFichier);
 			
@@ -87,7 +102,12 @@ public class FenetrePrincipale extends JFrame {
 		
 		}//fin
 		
-		class GestOuvrir implements ActionListener {
+/**
+ * 
+ * @author ebbab
+ *
+ */
+	  	class GestOuvrir implements ActionListener {
 
 			public GestOuvrir() {
 				// TODO Auto-generated constructor stub
@@ -100,6 +120,7 @@ public class FenetrePrincipale extends JFrame {
 				int result = fileChooser.showOpenDialog(fileChooser );
 				if (result == JFileChooser.APPROVE_OPTION) {
 					File selectedFile1 = fileChooser.getSelectedFile();
+					selectedFile1.getAbsolutePath();
 				}//fin actionPerformed
 				
 				
@@ -150,8 +171,10 @@ public class FenetrePrincipale extends JFrame {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-		          if (rsp ==1) {
+		          if (rsp ==JFileChooser.APPROVE_OPTION) {
 					//code savuer dans fichier
+		        	  File fichier = fc.getSelectedFile();
+			          fichier.getAbsolutePath();
 		          }
 		          
 				}//fin actionPerformed	
@@ -161,12 +184,12 @@ public class FenetrePrincipale extends JFrame {
 				 try {
 					 
 						Properties properties = new Properties();
-						properties.setProperty("Forme", );
-						properties.setProperty("Couleur", varibleCouleur);
-						properties.setProperty("Trait", variableTrait);
-						properties.setProperty("Remplissage", variableRemplissage);
-						properties.setProperty("PositionInitialeX", variablePositionIni);
-						properties.setProperty("PositionFinaleX", variablePositionFinale);
+						properties.setProperty("Forme", xml);
+						properties.setProperty("Couleur","");
+						properties.setProperty("Trait", "");
+						properties.setProperty("Remplissage", "");
+						properties.setProperty("PositionInitialeX", "");
+						properties.setProperty("PositionFinaleX", "");
 										
 					FileOutputStream fileOut = new FileOutputStream(xml);
 					properties.storeToXML(fileOut, "Proprietes");
@@ -194,8 +217,10 @@ public class FenetrePrincipale extends JFrame {
 		          int rsp = fc.showSaveDialog(fc) ;
 		          String filename = fc.getSelectedFile().getName()+".svg";
 		          saveToSVG(filename);
-		          if (rsp ==1) {
+		          if (rsp == JFileChooser.APPROVE_OPTION) {
 						//code savuer dans fichier
+		        	File fichier = fc.getSelectedFile();
+		        	fichier.getAbsolutePath();  
 			          }
 				}//fin actionPerformed	
 			

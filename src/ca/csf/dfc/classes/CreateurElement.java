@@ -18,6 +18,16 @@ public class CreateurElement {
 		return this.m_elementBuilder.getElement();
 	}
 	
+	/**
+	 * 
+	 * @param p_posXOrig
+	 * @param p_posYOrig
+	 * @param p_haut
+	 * @param p_larg
+	 * @param p_couleur
+	 * @param p_trait
+	 * @param p_remplissage
+	 */
 	public void construireElement(double p_posXOrig, double p_posYOrig, double p_haut, double p_larg, Color p_couleur, float p_trait, Color p_remplissage) {
 		this.m_elementBuilder.constCouleur(p_couleur);
 		this.m_elementBuilder.constRemplissage(p_remplissage);
