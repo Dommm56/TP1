@@ -9,7 +9,7 @@ import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 /*
- * @description la classe Panneau dessin utilise linterface Jpannel, et elle est utilisee par la fenetre principale.
+ * @description la classe Panneau dessin utilise l'interface JPanel, et elle est utilisee par la fenetre principale.
  * Cest dans cette classe que lon va pouvoir cliquer pour produire les formes.
  */
 public class PanneauDessin extends JPanel{
@@ -26,6 +26,22 @@ public class PanneauDessin extends JPanel{
         this.add(lbl_Trait); 
         this.addMouseListener(new GestClickSouris());   	
     } //fin Panneau1
+	/**
+	 * Méthode qui retourne la liste de dessin
+	 * 
+	 * @return List<Element>
+	 */
+	public List<Element> retournerDessin() {
+		return m_listeDessin;
+	}
+	/**
+	 * Peuple la liste de dessin
+	 * 
+	 * @param p_liste
+	 */
+	public void peuplerListeDessin(List<Element> p_liste) {
+		this.m_listeDessin = p_liste;
+	}
 
 	/*
 	 * description: Cette classe permet de gerer les clic de souris afin de produire les dessins.

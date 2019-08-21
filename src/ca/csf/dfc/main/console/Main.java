@@ -11,7 +11,7 @@ public class Main {
 	 * La classe main cree une fenetre principae avec comme 2 arguements les 2 panneaux necessaires
 	 */
 	public static void main(String[] args) {
-		new FenetrePrincipale(new PanneauOptions(), new PanneauDessin()).setVisible(true);
+		new FenetrePrincipale().setVisible(true);
 		
 	}// fin main
 }// fin Main

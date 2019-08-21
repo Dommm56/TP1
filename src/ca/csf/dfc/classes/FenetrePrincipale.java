@@ -41,6 +41,8 @@ public class FenetrePrincipale extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	
+	private PanneauOptions m_panOption = new PanneauOptions();
+	private PanneauDessin m_panDessin = new PanneauDessin();
 	/**
 	 *  La fenetre principale du programme. Elle contient 2 JPannels (principal et secondaire)
 	 *  On definit dans cette classe les differentes proprietes de la fenetre principale,
@@ -48,17 +50,17 @@ public class FenetrePrincipale extends JFrame {
 	 * @param p_PanneauPrincipal
 	 * @param p_PanneauSecondaire
 	 */
-	public FenetrePrincipale(JPanel p_PanneauPrincipal,JPanel p_PanneauSecondaire)
+	public FenetrePrincipale()
     {		
         super("Projet Dessin");							 
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);	 
         this.definirMenu();								 //methode qui ajoute les boutons au menu et des actionListeners
         this.setLayout(new BorderLayout());				 
-        this.add(p_PanneauPrincipal,BorderLayout.NORTH);     
-        this.add(p_PanneauSecondaire,BorderLayout.SOUTH);
-        p_PanneauSecondaire.setPreferredSize(new Dimension(100, 661));
-        p_PanneauPrincipal.setBorder(BorderFactory.createLineBorder(Color.black));
-        p_PanneauSecondaire.setBorder(BorderFactory.createLineBorder(Color.black));   
+        this.add(m_panOption,BorderLayout.NORTH);     
+        this.add(m_panDessin,BorderLayout.SOUTH);
+        m_panDessin.setPreferredSize(new Dimension(100, 661));
+        m_panOption.setBorder(BorderFactory.createLineBorder(Color.black));
+        m_panDessin.setBorder(BorderFactory.createLineBorder(Color.black));   
         this.setSize(1024, 768);
         this.setLocationRelativeTo(null);
         this.setJMenuBar(menuBar);          
@@ -124,7 +126,7 @@ public class FenetrePrincipale extends JFrame {
 		
 		
 		/*
-		 * @desc La classe GestNouveau qui va demander lorsquon clique sur nouveau si on veut sauvegarder le dessin courant
+		 * @desc La classe GestNouveau qui va demander lorsqu'on clique sur nouveau si on veut sauvegarder le dessin courant
 		 * et va reagir en fonction du choix
 		 */
 		class GestNouveau implements ActionListener {
@@ -170,6 +172,7 @@ public class FenetrePrincipale extends JFrame {
 			 */
 			public void saveToXML(String xml) throws FileNotFoundException {	
 				 try {
+					 
 					Properties properties = new Properties();
 					properties.setProperty("Forme","");
 					properties.setProperty("Couleur","");
