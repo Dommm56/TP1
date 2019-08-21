@@ -2,53 +2,57 @@ package ca.csf.dfc.classes;
 
 import java.awt.Color;
 import java.awt.Point;
-
+/**
+ * Classe qui permet l'instanciation d'un objet de CreateurElement
+ * Elle partie intégrante d'un design pattern de type Singleton
+ * 
+ * @author Philippe Deschênes
+ *
+ */
 public class GenerateurElement {
-
-	public Point getM_posOrig() {
-		return m_posOrig;
-	}
-
-	public Point getM_posFin() {
-		return m_posFin;
-	}
-
-	public Color getM_couleur() {
-		return m_couleur;
-	}
-
-	public Color getM_remplissage() {
-		return m_remplissage;
-	}
-
-	public Formes getM_typeElement() {
-		return m_typeElement;
-	}
-
-	public float getM_trait() {
-		return m_trait;
-	}
-
-	public CreateurElement getM_createur() {
-		return m_createur;
-	}
-
-
+	/**
+	 * Premier point, représente l'origine de la forme
+	 */
 	private Point m_posOrig = new Point();
-	private Point m_posFin;
+	/**
+	 * Deuxième point, représente le point définissant la hauteur et la largeur du rectangle qui définit la forme
+	 */
+	private Point m_posFin = new Point();
+	/**
+	 * Couleur du trait de la forme
+	 */
 	private Color m_couleur;
+	/**
+	 * Couleur de remplissage de la forme
+	 */
 	private Color m_remplissage;
+	/**
+	 * Type de forme
+	 */
 	private Formes m_typeElement;
+	/**
+	 * Épaisseur du trait de la forme
+	 */
 	private float m_trait;
+	/**
+	 * Objet de type CreateurElement qui est un Builder de forme
+	 */
 	private CreateurElement m_createur;
 	
+	/**
+	 * Constructeur d'un GenrateurElement
+	 * Initialise les données membres à des valeurs par défaut
+	 */
 	public GenerateurElement() {
 		this.m_couleur = Couleurs.NOIR.getCouleur();
 		this.m_posOrig.setLocation(0, 0);
 		this.m_trait = 0;
 		this.m_remplissage = null;
 	}
-	
+	/**
+	 * 
+	 * @param p_pos
+	 */
 	public void setPosOrig(Point p_pos) {
 		m_posOrig = p_pos;
 	}
