@@ -6,7 +6,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Shape;
 
-class Element implements IElement {
+public class Element implements IElement {
 	
 	/**
 	 * Classe qui implémente l'interface IElement qui définit un objet pour le dessin

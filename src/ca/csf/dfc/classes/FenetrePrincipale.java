@@ -120,7 +120,7 @@ public class FenetrePrincipale extends JFrame {
 		
 		
 		/*
-		 * @desc La classe GestNouveau qui va demander lorsquon clique sur nouveau si on veut sauvegarder le dessin courant
+		 * @desc La classe GestNouveau qui va demander lorsqu'on clique sur nouveau si on veut sauvegarder le dessin courant
 		 * et va reagir en fonction du choix
 		 */
 		class GestNouveau implements ActionListener {
