@@ -315,7 +315,7 @@ public class FenetrePrincipale extends JFrame {
 		
 		//fin GestEnregistrer
 		
-		public void ouvrir(List<Element> p_element, File p_file) throws Exception, FileNotFoundException {
+		public void Charger(List<Element> p_element, File p_file) throws Exception, FileNotFoundException {
 			
 			throw new NotImplementedException();
 		}
