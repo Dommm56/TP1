@@ -32,6 +32,7 @@ import javax.xml.transform.stream.*;
 import org.w3c.dom.*;
 
 import ca.csf.dfc.main.console.Main;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /*
  * La classe FenetrePrincipale implemente linterface JFrame. Cette classe sert a placer les differents panneaux necessaires 
@@ -155,7 +156,7 @@ public class FenetrePrincipale extends JFrame {
 		        int rsp = fc.showSaveDialog(fc) ;
 		        String filename = fc.getSelectedFile().getName()+".xml";
 		        try {
-					saveToXML(filename);
+					saveToXML(filename, null, null);
 		        } catch (FileNotFoundException e1) {		
 					e1.printStackTrace();
 		        }//fin try
@@ -170,31 +171,52 @@ public class FenetrePrincipale extends JFrame {
 			/*
 			 * @desc Methode SaveToXML pour factoriser le code de GestEnregistrer
 			 */
-			public void saveToXML(String xml) throws FileNotFoundException {	
-				 try {
-					 
-					Properties properties = new Properties();
-					properties.setProperty("Forme","");
-					properties.setProperty("Couleur","");
-					properties.setProperty("Trait", "");
-					properties.setProperty("Remplissage", "");
-					properties.setProperty("PositionInitialeX", "");
-					properties.setProperty("PositionFinaleX", "");
-										
-					    FileOutputStream fileOut = new FileOutputStream(xml);
-					    properties.storeToXML(fileOut, "Proprietes");
-					    fileOut.close();
-					 } catch (FileNotFoundException e) {
-						e.printStackTrace();
-					 } catch (IOException e) {
-						e.printStackTrace();
+			public void saveToXML(String filename,File p_File,List<Element>p_element) throws FileNotFoundException {	
+				
+				if (p_File == null) {
+					throw new IllegalArgumentException("p_File est null");
+				}
+				XMLStreamWriter doc = null;
+				FileWriter output = new FileWriter(p_File);
+				doc = XMLOutputFactory.newInstance().createXMLStreamWriter(output);		
+				doc.writeStartDocument();
+				doc.writeStartElement("dessin");
+				doc.writeStartElement("fond");
+				doc.writeAttribute("hauteur", Double.toString(0.5));
+				doc.writeAttribute("largeur", Double.toString(0.5));
+				doc.writeEndElement();
+
+				doc.writeStartElement("forme");
+				
+				for (Element e : p_element) {
+					doc.writeStartDocument();
+				    doc.writeAttribute("X",Double.toString(e.getTrait()));
+					doc.writeAttribute("Y", Double.toString(e.getTrait()));
+					doc.writeAttribute("hauteur", Double.toString(e.getTypeElement()));
+					doc.writeAttribute("largeur", Double.toString(e.getTypeElement()));
+					doc.writeAttribute("trait", Integer.toString((int) e.getTrait()));
+					if (e.getCouleur() != null) {
+						doc.writeAttribute("couleur", Integer.toString(e.getCouleur().getRGB()));
+					} else {
+						doc.writeAttribute("couleur", "null");
+					}
+					doc.writeEndElement();
+				}
+				
+				doc.writeEndElement();
+				doc.writeEndElement();
+				if (doc != null) {
+					doc.flush();
+					doc.close();
+				}
+				
 		 }
 
 				
 			}//fin methode 
 
 		//fin try
-			}//fin methode SaveToXML
+			//fin methode SaveToXML
 		//fin GestEnregistrer
 		
 		/*
@@ -287,13 +309,15 @@ public class FenetrePrincipale extends JFrame {
 				if (doc != null) {
 					doc.flush();
 					doc.close();
-				}
-				
-				
-				
-				
-				
+				}		
 	
 			}//fin methode 
-		}//fin GestEnregistrer
 		
+		//fin GestEnregistrer
+		
+		public void ouvrir(List<Element> p_element, File p_file) throws Exception, FileNotFoundException {
+			
+			throw new NotImplementedException();
+		}
+		
+		}

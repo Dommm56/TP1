@@ -31,6 +31,8 @@ public class Element implements IElement {
 	 */
 	private Color m_remplissage;
 	
+	
+		
 
 	@Override
 	public void defTypeElement(Shape p_shape) {
@@ -85,5 +87,6 @@ public class Element implements IElement {
 		g2.setStroke(new BasicStroke(getTrait()));
 		g2.draw(getTypeElement());
 	}
+
 
 }
